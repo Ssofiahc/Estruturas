@@ -40,11 +40,11 @@ class Arvore:
         if no is None:
             return 0
         
-        elif self.get_sae() is None and self.get_sad() is None:
+        elif no.get_sae() is None and no.get_sad() is None:
             return 1
         
         else: 
-            return self.folhasRec(no.get_sae) + self.folhasRec(no.get_sad)
+            return self.folhasRec(no.get_sae()) + self.folhasRec(no.get_sad())
     
 
     def numNos(self):
@@ -56,7 +56,7 @@ class Arvore:
             return 0
         
         else:
-            return 1 + self.numNosRec(no.get_sae) + self.numNosRec(self.get_sad)
+            return 1 + self.numNosRec(no.get_sae()) + self.numNosRec(no.get_sad())
     
 
     def altura(self):
@@ -132,7 +132,7 @@ class Arvore:
         
     
     def imprimePos(self):
-        return self.imprimePosRec(self.__raiz())
+        return self.imprimePosRec(self.__raiz)
     
     def imprimePosRec(self, no):
 
